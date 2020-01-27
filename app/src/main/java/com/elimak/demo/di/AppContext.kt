@@ -1,4 +1,4 @@
-package com.elimak.boilerplate.di
+package com.elimak.demo.di
 
 import javax.inject.Qualifier
 

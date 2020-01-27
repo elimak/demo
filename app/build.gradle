@@ -8,7 +8,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.elimak.boilerplate"
+        applicationId "com.elimak.demo"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -21,6 +21,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
     dataBinding {
         enabled = true
     }
@@ -32,6 +42,9 @@ def lifecycle_version = "2.1.0"
 def glideVersion = '4.10.0'
 def bindingCollectionVersion = '3.1.1'
 def coroutineVersion = '1.3.2'
+def retrofit_version = '2.6.2'
+def okhttp3_logger = '4.2.1'
+def room_version = '2.2.3'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,8 +55,10 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.2.0-alpha04'
 
-    // GSON
-    implementation 'com.google.code.gson:gson:2.8.6'
+    // retrofit + json
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_logger"
 
     // databinding for collections
     implementation "me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:$bindingCollectionVersion"
@@ -57,8 +72,17 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
-    // coroutines / Rxjava - you may want to use one or the other
+    // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    // ROOM
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // ROOM - Kotlin Extensions and Coroutines support
+    implementation "androidx.room:room-ktx:$room_version"
 
     // Glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
@@ -73,4 +97,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    implementation 'androidx.room:room-runtime:2.2.3'
+    annotationProcessor 'androidx.room:room-compiler:2.2.3'
 }

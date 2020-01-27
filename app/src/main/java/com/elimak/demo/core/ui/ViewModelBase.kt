@@ -1,4 +1,4 @@
-package com.elimak.boilerplate.ui.base
+package com.elimak.demo.core.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -7,7 +7,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
 open class ViewModelBase(application: Application) : AndroidViewModel(application){
-
     protected var context: Application = application
     protected val viewModelJob = SupervisorJob()
     protected val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)

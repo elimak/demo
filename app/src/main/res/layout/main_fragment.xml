@@ -8,7 +8,7 @@
         <import type="android.view.View" />
         <variable
             name="viewmodel"
-            type="com.elimak.boilerplate.ui.main.MainViewModel" />
+            type="com.elimak.demo.ui.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

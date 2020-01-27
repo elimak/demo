@@ -1,4 +1,4 @@
-# Elimak Boilerplate Project
+# Elimak demo Project
 
 Basic setup to speed up new project creation
 

@@ -1,9 +1,9 @@
-package com.elimak.boilerplate
+package com.elimak.demo
 
 import android.app.Application
-import com.elimak.boilerplate.di.ApplicationComponent
-import com.elimak.boilerplate.di.ApplicationModule
-import com.elimak.boilerplate.di.DaggerApplicationComponent
+import com.elimak.demo.di.ApplicationComponent
+import com.elimak.demo.di.ApplicationModule
+import com.elimak.demo.di.DaggerApplicationComponent
 
 class App: Application() {
     private lateinit var instance: App

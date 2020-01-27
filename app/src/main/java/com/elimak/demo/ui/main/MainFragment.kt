@@ -1,4 +1,4 @@
-package com.elimak.boilerplate.ui.main
+package com.elimak.demo.ui.main
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.elimak.boilerplate.databinding.MainFragmentBinding
+import com.elimak.demo.databinding.MainFragmentBinding
 
 class MainFragment : Fragment() {
 

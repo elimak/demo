@@ -1,4 +1,4 @@
-package com.elimak.boilerplate
+package com.elimak.demo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
